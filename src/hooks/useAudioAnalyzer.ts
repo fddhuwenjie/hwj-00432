@@ -52,6 +52,7 @@ export function useAudioAnalyzer() {
 
       const source = ctx.createMediaElementSource(audio)
       source.connect(analyser)
+      analyser.connect(ctx.destination)
       sourceRef.current = source
 
       await audio.play()
